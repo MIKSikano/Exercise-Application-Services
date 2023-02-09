@@ -7,4 +7,6 @@ public interface IExerciseTypeService
     public void Save(ExerciseType hash);
     public ExerciseType GetById(int Id);
     public void Delete(int Id);
+
+    public ExerciseType GetLatest();
 }

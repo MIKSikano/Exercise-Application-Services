@@ -30,6 +30,12 @@ public class ExerciseTypeMSSQLService : IExerciseTypeService
         return _dataContext.ExerciseTypes.SingleOrDefault(o => o.Id == Id);
     }
 
+    public ExerciseType GetLatest() 
+    {
+        List<ExerciseType> exerciseType = _dataContext.ExerciseTypes.ToList<ExerciseType>();
+        return exerciseType.LastOrDefault();
+    }
+
     public void Save(ExerciseType hash)
     {
         if (hash.Id == null || hash.Id == 0)
@@ -44,4 +50,5 @@ public class ExerciseTypeMSSQLService : IExerciseTypeService
         }
         _dataContext.SaveChanges();
     }
+
 }

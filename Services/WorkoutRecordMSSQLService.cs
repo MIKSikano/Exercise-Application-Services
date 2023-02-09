@@ -31,6 +31,12 @@ public class WorkoutRecordMSSQLService : IWorkoutRecordService
         return _dataContext.WorkoutRecords.SingleOrDefault(o => o.Id == Id);
     }
 
+    public WorkoutRecord GetLatest() 
+    {
+        List<WorkoutRecord> workoutRecord = _dataContext.WorkoutRecords.ToList<WorkoutRecord>();
+        return workoutRecord.LastOrDefault();
+    }
+
     public void Save(WorkoutRecord hash)
     {
         if (hash.Id == null || hash.Id == 0)

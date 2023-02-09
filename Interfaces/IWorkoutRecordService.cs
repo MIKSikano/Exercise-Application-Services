@@ -7,4 +7,5 @@ public interface IWorkoutRecordService
     public void Save(WorkoutRecord hash);
     public WorkoutRecord GetById(int Id);
     public void Delete(int Id);
+    public WorkoutRecord GetLatest();
 }

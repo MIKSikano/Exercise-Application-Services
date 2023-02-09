@@ -56,6 +56,13 @@ public class WorkoutRecordController : ControllerBase
         return Ok(workoutRecord);
     }
 
+    [HttpGet("latest")]
+    public IActionResult ShowLatest()
+    {
+        WorkoutRecord workoutRecord = _workoutRecordService.GetLatest();
+        return Ok(workoutRecord);
+    }
+
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {

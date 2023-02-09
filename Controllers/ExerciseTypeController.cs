@@ -55,6 +55,14 @@ public class ExerciseTypeController : ControllerBase
         return Ok(exerciseType);
     }
 
+    [HttpGet("latest")]
+    public IActionResult ShowLatest()
+    {
+        ExerciseType exerciseType = _exerciseTypeService.GetLatest();
+        return Ok(exerciseType);
+    }
+
+
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
