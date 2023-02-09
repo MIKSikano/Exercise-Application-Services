@@ -18,8 +18,8 @@ public class BuildExerciseDataFromDictionary
         {
             exerciseData.Id = (int)this._dataDictionary["Id"];
         }
-        exerciseData.CaloriesBurned = (int)this._dataDictionary["CaloriesBurned"];
-        exerciseData.CaloriesBurnedGoal = (int)this._dataDictionary["CaloriesBurnedGoal"];
+        exerciseData.CaloriesBurned = int.Parse(this._dataDictionary["CaloriesBurned"].ToString());
+        exerciseData.CaloriesBurnedGoal = int.Parse(this._dataDictionary["CaloriesBurnedGoal"].ToString());
         exerciseData.ExerciseTypeId = int.Parse(this._dataDictionary["ExerciseTypeId"].ToString());
         exerciseData.WorkoutRecordId = int.Parse(this._dataDictionary["WorkoutRecordId"].ToString());
 

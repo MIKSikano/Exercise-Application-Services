@@ -16,8 +16,8 @@ public class BuildExerciseTypeFromDictionary
         {
             exerciseType.Id = (int)this._dataDictionary["Id"];
         }
-        exerciseType.ExerciseName = (string)this._dataDictionary["ExerciseName"];
-        exerciseType.ExerciseName = (string)this._dataDictionary["ExerciseDesciption"];
+        exerciseType.ExerciseName = this._dataDictionary["ExerciseName"].ToString();
+        exerciseType.ExerciseDescription = this._dataDictionary["ExerciseDescription"].ToString();
 
         return exerciseType;
     }

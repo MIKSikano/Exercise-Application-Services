@@ -74,3 +74,6 @@ C:\Users\miks78151\OneDrive - Willis Towers Watson\Documents\Full Stack Project\
 C:\Users\miks78151\OneDrive - Willis Towers Watson\Documents\Full Stack Project\Exercise Application Services\obj\Debug\net7.0\Exercise Application Services.pdb
 C:\Users\miks78151\OneDrive - Willis Towers Watson\Documents\Full Stack Project\Exercise Application Services\obj\Debug\net7.0\Exercise Application Services.genruntimeconfig.cache
 C:\Users\miks78151\OneDrive - Willis Towers Watson\Documents\Full Stack Project\Exercise Application Services\obj\Debug\net7.0\ref\Exercise Application Services.dll
+C:\Users\miks78151\OneDrive - Willis Towers Watson\Documents\Full Stack Project\Exercise Application Services\bin\Debug\net7.0\Payloads\exerciseData.json
+C:\Users\miks78151\OneDrive - Willis Towers Watson\Documents\Full Stack Project\Exercise Application Services\bin\Debug\net7.0\Payloads\exerciseType.json
+C:\Users\miks78151\OneDrive - Willis Towers Watson\Documents\Full Stack Project\Exercise Application Services\bin\Debug\net7.0\Payloads\workoutRecord.json

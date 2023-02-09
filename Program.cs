@@ -26,6 +26,7 @@ public class Program
            {
                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
                options.JsonSerializerOptions.WriteIndented = true;
+               options.JsonSerializerOptions.PropertyNamingPolicy = null;
            });
 
         builder.Services.AddDbContext<DataContext>(options =>
