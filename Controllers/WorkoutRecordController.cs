@@ -68,5 +68,6 @@ public class WorkoutRecordController : ControllerBase
     {
         _workoutRecordService.Delete(id);
         return Ok("Workout Type Deleted!");
+    
     }
 }

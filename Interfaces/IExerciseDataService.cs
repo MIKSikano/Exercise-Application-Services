@@ -7,4 +7,6 @@ public interface IExerciseDataService
     public void Save(ExerciseData hash);
     public ExerciseData GetById(int Id);
     public void Delete(int Id);
+
+    public void Edit(ExerciseData hash);
 }

@@ -21,6 +21,13 @@ public class ExerciseDataMSSQLService : IExerciseDataService
     public void Delete(int Id)
     {
         ExerciseData exerciseData = _dataContext.ExerciseDatas.SingleOrDefault(o => o.Id == Id);
+        
+        ExerciseType exerciseType = _dataContext.ExerciseTypes.SingleOrDefault(o => o.Id == Id);
+        _dataContext.ExerciseTypes.Remove(exerciseType);
+
+        WorkoutRecord workoutRecord = _dataContext.WorkoutRecords.SingleOrDefault(o => o.Id == Id);
+        _dataContext.WorkoutRecords.Remove(workoutRecord);
+
         _dataContext.ExerciseDatas.Remove(exerciseData);
         _dataContext.SaveChanges();
     }
@@ -53,6 +60,12 @@ public class ExerciseDataMSSQLService : IExerciseDataService
             tempData.ExerciseTypeId = hash.ExerciseTypeId;
             tempData.WorkoutRecordId = hash.WorkoutRecordId;
         }
+        _dataContext.SaveChanges();
+    }
+
+    public void Edit(ExerciseData hash)
+    {
+        
         _dataContext.SaveChanges();
     }
 }

@@ -46,7 +46,41 @@ public class ExerciseDataController : ControllerBase
             message.Add("message", "Workout Data Added");
             return Ok(message);
         }
+
     }
+    [HttpPut("{id}")]
+    public IActionResult Edit([FromBody] object payload, int id)
+    {
+        ExerciseData exerciseData = _exerciseDataService.GetById(id);
+        if (exerciseData == null)
+        {
+            Dictionary<string, object> errorMessage = new Dictionary<string, object>();
+            errorMessage.Add("message", "No Exercise Data Found on id: " + id);
+            return UnprocessableEntity(errorMessage);
+        }
+        else
+        {
+            Dictionary<string, object> hash = JsonSerializer.Deserialize<Dictionary<string, object>>(payload.ToString());
+            ValidateSaveExerciseData validator = new ValidateSaveExerciseData(hash);
+            validator.ValidateSave();
+
+            if (validator.HasErrors())
+            {
+                return UnprocessableEntity(validator.Errors);
+            }
+            else
+            {
+                var cmd = new BuildExerciseDataFromDictionary(hash);
+                ExerciseData exerciseEditData = cmd.Run();
+                _exerciseDataService.Save(exerciseEditData);
+
+                Dictionary<string, object> message = new Dictionary<string, object>();
+                message.Add("message", "Workout Data Edited!");
+                return Ok(message);
+            }
+        }
+    }
+
 
     [HttpGet("{id}")]
     public IActionResult Show(int id)
@@ -60,6 +94,8 @@ public class ExerciseDataController : ControllerBase
     {
         _exerciseDataService.Delete(id);
         return Ok("Workout Data is Deleted");
+
     }
+
 
 }
