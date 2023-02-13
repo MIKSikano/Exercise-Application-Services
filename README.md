@@ -8,7 +8,12 @@ curl http://localhost:8080/set_items | jq
 ```
 ### HttpPost
 ```
-curl -X POST -H "Content-Type: application/json" -d @payloads/setItem.json http://localhost:8080/set_items | jq
+curl -X POST -H "Content-Type: application/json" -d @payloads/ExerciseData.json http://localhost:8080/exercise_data | jq
+curl -X POST -H "Content-Type: application/json" -d @payloads/ExerciseType.json http://localhost:8080/exercise_data | jq
+```
+### HttpDelete
+```
+curl -X DELETE -H "Accept: application/json" http://localhost:8080/workout_data/1 | jq
 ```
 ### Add SQLServer Dependencies for EntityFramework
 ```
